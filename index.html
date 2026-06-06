@@ -1,320 +1,171 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- HERO BANNER -->
+<section style="padding:120px 20px;text-align:center;">
 
-<title>CYBER DRAGON SAMURAI</title>
+<h1 class="title">CYBER DRAGON SAMURAI</h1>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<p style="font-size:22px;margin-top:20px;">
+Masuki dunia futuristik yang dipenuhi naga legendaris,
+samurai cyber, dan pertempuran epik tanpa batas.
+</p>
 
-<style>
+<br>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Orbitron',sans-serif;
-}
+<button class="btn">🎮 MAIN SEKARANG</button>
 
-body{
-overflow:hidden;
-background:#000;
-color:#fff;
-}
+</section>
 
-/* VIDEO BACKGROUND */
+<!-- KARAKTER -->
+<section style="padding:80px 20px;text-align:center;">
 
-video{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-5;
-}
+<h2>⚔️ KARAKTER UTAMA ⚔️</h2>
 
-/* DARK OVERLAY */
+<br><br>
 
-.overlay{
-position:fixed;
-width:100%;
-height:100%;
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,.65),
-rgba(5,5,20,.85)
-);
-z-index:-4;
-}
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
 
-/* CYBER GRID */
-
-.grid{
-position:fixed;
-width:100%;
-height:100%;
-background:
-linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
-linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
-background-size:50px 50px;
-animation:gridMove 20s linear infinite;
-z-index:-3;
-}
-
-@keyframes gridMove{
-0%{transform:translateY(0);}
-100%{transform:translateY(50px);}
-}
-
-/* LIGHTNING */
-
-.lightning{
-position:fixed;
-inset:0;
-background:white;
-opacity:0;
-animation:lightning 8s infinite;
-z-index:-2;
-}
-
-@keyframes lightning{
-0%,94%,100%{opacity:0;}
-95%{opacity:.8;}
-96%{opacity:0;}
-97%{opacity:.5;}
-98%{opacity:0;}
-}
-
-/* PARTICLES */
-
-.particle{
-position:absolute;
-width:3px;
-height:3px;
-background:#00ffff;
-box-shadow:0 0 10px #00ffff;
-border-radius:50%;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-from{
-transform:translateY(-100vh);
-}
-to{
-transform:translateY(100vh);
-}
-}
-
-/* MAIN */
-
-.main{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-/* DRAGON */
-
-.dragon{
-font-size:120px;
-animation:float 3s ease-in-out infinite;
-filter:drop-shadow(0 0 20px cyan);
-}
-
-@keyframes float{
-50%{
-transform:translateY(-20px);
-}
-}
-
-/* TITLE */
-
-.title{
-font-size:85px;
-font-weight:900;
-background:linear-gradient(
-90deg,
-#00ffff,
-#7d5cff,
-#ff00ff
-);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:
-0 0 20px #00ffff,
-0 0 40px #7d5cff;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{
-filter:brightness(1);
-}
-to{
-filter:brightness(1.4);
-}
-}
-
-.subtitle{
-margin-top:15px;
-font-size:22px;
-letter-spacing:4px;
-color:#d6d6ff;
-}
-
-/* BUTTON */
-
-.btn{
-margin-top:40px;
-padding:18px 50px;
-font-size:20px;
-font-weight:bold;
-border:none;
-border-radius:60px;
-cursor:pointer;
-color:#fff;
-
-background:linear-gradient(
-90deg,
-#00ffff,
-#7d5cff,
-#ff00ff
-);
-
-box-shadow:
-0 0 15px #00ffff,
-0 0 30px #7d5cff,
-0 0 60px #ff00ff;
-
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-}
-
-/* FIRE */
-
-.fire{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-height:180px;
-background:
-linear-gradient(
-to top,
-#ff2f00,
-#ff7b00,
-transparent
-);
-filter:blur(25px);
-animation:fire 2s infinite alternate;
-z-index:-1;
-}
-
-@keyframes fire{
-from{
-height:150px;
-}
-to{
-height:220px;
-}
-}
-
-/* CYBER FRAME */
-
-.frame{
-position:fixed;
-inset:15px;
-border:2px solid #00ffff;
-box-shadow:
-0 0 15px #00ffff,
-0 0 35px #7d5cff;
-pointer-events:none;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.title{
-font-size:50px;
-}
-
-.dragon{
-font-size:80px;
-}
-
-.subtitle{
-font-size:15px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- GANTI VIDEO DI BAWAH DENGAN VIDEO FAVORIT ANDA -->
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-futuristic-city-1562762295915?download=1080p" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-<div class="grid"></div>
-<div class="lightning"></div>
-<div class="fire"></div>
-<div class="frame"></div>
-
-<div class="main">
-
-<div class="dragon">🀄⚔️</div>
-
-<div class="title">
-CYBER DRAGON
+<div>
+<img src="samurai.png" width="250">
+<h3>Cyber Samurai</h3>
 </div>
 
-<div class="subtitle">
-SAMURAI • NEON • PETIR • API • FUTURISTIK
+<div>
+<img src="dragon.png" width="250">
+<h3>Ancient Dragon</h3>
 </div>
+
+<div>
+<img src="warrior.png" width="250">
+<h3>Cyber Warrior</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- FITUR -->
+<section style="padding:80px 20px;text-align:center;">
+
+<h2>🔥 FITUR GAME 🔥</h2>
+
+<br><br>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
+
+<div>
+<h3>🐉 Dragon Boss</h3>
+<p>Boss raksasa dengan hadiah langka.</p>
+</div>
+
+<div>
+<h3>⚡ PvP Arena</h3>
+<p>Bertarung melawan pemain lain.</p>
+</div>
+
+<div>
+<h3>🌌 Open World</h3>
+<p>Jelajahi dunia cyber futuristik.</p>
+</div>
+
+<div>
+<h3>💎 Rare Item</h3>
+<p>Koleksi item eksklusif.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERI -->
+<section style="padding:80px 20px;text-align:center;">
+
+<h2>📸 SCREENSHOT GAME</h2>
+
+<br><br>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+
+<img src="screenshot1.jpg" width="350">
+<img src="screenshot2.jpg" width="350">
+<img src="screenshot3.jpg" width="350">
+
+</div>
+
+</section>
+
+<!-- VIDEO TRAILER -->
+<section style="padding:80px 20px;text-align:center;">
+
+<h2>🎬 OFFICIAL TRAILER</h2>
+
+<br><br>
+
+<iframe
+width="900"
+height="500"
+src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+allowfullscreen>
+</iframe>
+
+</section>
+
+<!-- DOWNLOAD -->
+<section style="padding:100px 20px;text-align:center;">
+
+<h2>⬇️ DOWNLOAD GAME</h2>
+
+<br>
+
+<p>
+Tersedia untuk Windows, Android, dan iOS
+</p>
+
+<br><br>
+
+<button class="btn">DOWNLOAD PC</button>
+
+<button class="btn">DOWNLOAD MOBILE</button>
+
+</section>
+
+<!-- REGISTER -->
+<section style="padding:100px 20px;text-align:center;">
+
+<h2>📝 REGISTER ACCOUNT</h2>
+
+<br><br>
+
+<form style="max-width:500px;margin:auto;">
+
+<input
+type="text"
+placeholder="Username"
+style="width:100%;padding:15px;margin-bottom:10px;">
+
+<input
+type="email"
+placeholder="Email"
+style="width:100%;padding:15px;margin-bottom:10px;">
+
+<input
+type="password"
+placeholder="Password"
+style="width:100%;padding:15px;margin-bottom:10px;">
 
 <button class="btn">
-MASUK SEKARANG
+REGISTER
 </button>
 
-</div>
+</form>
 
-<script>
+</section>
 
-for(let i=0;i<150;i++){
+<!-- FOOTER -->
+<footer style="padding:50px;text-align:center;">
 
-let p=document.createElement("div");
-p.classList.add("particle");
+<h3>CYBER DRAGON SAMURAI</h3>
 
-p.style.left=Math.random()*100+"%";
+<p>
+© 2026 All Rights Reserved
+</p>
 
-p.style.animationDuration=
-(Math.random()*6+4)+"s";
-
-p.style.opacity=Math.random();
-
-document.body.appendChild(p);
-
-}
-
-</script>
-
-</body>
-</html>
-
-
+</footer>
