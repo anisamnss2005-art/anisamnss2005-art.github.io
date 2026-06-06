@@ -1,172 +1,139 @@
-<!-- HERO BANNER -->
-<section style="padding:120px 20px;text-align:center;">
+<script>
 
-<h1 class="title">CYBER DRAGON SAMURAI</h1>
+for(let i=0;i<200;i++){
 
-<p style="font-size:22px;margin-top:20px;">
-Masuki dunia futuristik yang dipenuhi naga legendaris,
-samurai cyber, dan pertempuran epik tanpa batas.
-</p>
+let star=document.createElement('div');
 
-<br>
+star.classList.add('star');
 
-<button class="btn">🎮 MAIN SEKARANG</button>
+star.style.left=Math.random()*100+'%';
 
-</section>
+star.style.top=Math.random()*100+'%';
 
-<!-- KARAKTER -->
-<section style="padding:80px 20px;text-align:center;">
+star.style.animationDuration=
+(Math.random()*8+4)+'s';
 
-<h2>⚔️ KARAKTER UTAMA ⚔️</h2>
+document.body.appendChild(star);
 
-<br><br>
+}
 
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
+</script><div class="lightning"></div>
+<div class="fire"></div>
+<div class="neon"></div>/* BACKGROUND GAMING */
 
-<div>
-<img src="samurai.png" width="250">
-<h3>Cyber Samurai</h3>
-</div>
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:
+    radial-gradient(circle at center,
+    #1a0033 0%,
+    #090012 50%,
+    #000000 100%);
+    color:white;
+}
 
-<div>
-<img src="dragon.png" width="250">
-<h3>Ancient Dragon</h3>
-</div>
+/* PETIR */
 
-<div>
-<img src="warrior.png" width="250">
-<h3>Cyber Warrior</h3>
-</div>
+.lightning{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+    animation:lightning 7s infinite;
+}
 
-</div>
+@keyframes lightning{
 
-</section>
+0%,95%,100%{
+opacity:0;
+}
 
-<!-- FITUR -->
-<section style="padding:80px 20px;text-align:center;">
+96%{
+opacity:.8;
+}
 
-<h2>🔥 FITUR GAME 🔥</h2>
+97%{
+opacity:0;
+}
 
-<br><br>
+98%{
+opacity:.5;
+}
 
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
+99%{
+opacity:0;
+}
 
-<div>
-<h3>🐉 Dragon Boss</h3>
-<p>Boss raksasa dengan hadiah langka.</p>
-</div>
+}
 
-<div>
-<h3>⚡ PvP Arena</h3>
-<p>Bertarung melawan pemain lain.</p>
-</div>
+/* API */
 
-<div>
-<h3>🌌 Open World</h3>
-<p>Jelajahi dunia cyber futuristik.</p>
-</div>
+.fire{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:250px;
+background:
+linear-gradient(
+to top,
+#ff2200,
+#ff7700,
+#ffaa00,
+transparent
+);
+filter:blur(30px);
+animation:fireMove 2s infinite alternate;
+z-index:-1;
+}
 
-<div>
-<h3>💎 Rare Item</h3>
-<p>Koleksi item eksklusif.</p>
-</div>
+@keyframes fireMove{
 
-</div>
+from{
+height:180px;
+}
 
-</section>
+to{
+height:280px;
+}
 
-<!-- GALERI -->
-<section style="padding:80px 20px;text-align:center;">
+}
 
-<h2>📸 SCREENSHOT GAME</h2>
+/* GLOW NEON */
 
-<br><br>
+.neon{
+position:fixed;
+inset:0;
+background:
+radial-gradient(
+circle at center,
+rgba(0,255,255,.15),
+transparent 60%
+);
+pointer-events:none;
+}
 
-<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+/* BINTANG CYBER */
 
-<img src="screenshot1.jpg" width="350">
-<img src="screenshot2.jpg" width="350">
-<img src="screenshot3.jpg" width="350">
+.star{
+position:fixed;
+width:3px;
+height:3px;
+background:#00ffff;
+border-radius:50%;
+box-shadow:0 0 10px #00ffff;
+animation:fall linear infinite;
+}
 
-</div>
+@keyframes fall{
 
-</section>
+from{
+transform:translateY(-100vh);
+}
 
-<!-- VIDEO TRAILER -->
-<section style="padding:80px 20px;text-align:center;">
+to{
+transform:translateY(100vh);
+}
 
-<h2>🎬 OFFICIAL TRAILER</h2>
-
-<br><br>
-
-<iframe
-width="900"
-height="500"
-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-allowfullscreen>
-</iframe>
-
-</section>
-
-<!-- DOWNLOAD -->
-<section style="padding:100px 20px;text-align:center;">
-
-<h2>⬇️ DOWNLOAD GAME</h2>
-
-<br>
-
-<p>
-Tersedia untuk Windows, Android, dan iOS
-</p>
-
-<br><br>
-
-<button class="btn">DOWNLOAD PC</button>
-
-<button class="btn">DOWNLOAD MOBILE</button>
-
-</section>
-
-<!-- REGISTER -->
-<section style="padding:100px 20px;text-align:center;">
-
-<h2>📝 REGISTER ACCOUNT</h2>
-
-<br><br>
-
-<form style="max-width:500px;margin:auto;">
-
-<input
-type="text"
-placeholder="Username"
-style="width:100%;padding:15px;margin-bottom:10px;">
-
-<input
-type="email"
-placeholder="Email"
-style="width:100%;padding:15px;margin-bottom:10px;">
-
-<input
-type="password"
-placeholder="Password"
-style="width:100%;padding:15px;margin-bottom:10px;">
-
-<button class="btn">
-REGISTER
-</button>
-
-</form>
-
-</section>
-
-<!-- FOOTER -->
-<footer style="padding:50px;text-align:center;">
-
-<h3>CYBER DRAGON SAMURAI</h3>
-
-<p>
-© 2026 All Rights Reserved
-</p>
-
-</footer>
-
+}
